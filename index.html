@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mastery Registration</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #002b2d 0%, #001a1a 100%);
+            --accent-glow: #00f2ff;
+            --wa-deep-green: #075E54;
+            --wa-light-glow: #25D366;
+            --input-bg: rgba(0, 242, 255, 0.05);
+            --text-color: #e0fbff;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: var(--accent-glow);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: var(--input-bg);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+            background: rgba(0, 242, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 8px 0;
+            font-size: 0.9rem;
+            color: var(--accent-glow);
+        }
+
+        .status-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .status-options label {
+            margin: 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            color: var(--text-color);
+            transition: 0.3s;
+        }
+
+        .status-options input[type="radio"] {
+            display: none;
+        }
+
+        .status-options input[type="radio"]:checked + label {
+            background: var(--accent-glow);
+            color: #001a1a;
+            box-shadow: 0 0 15px var(--accent-glow);
+            border-color: var(--accent-glow);
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: var(--accent-glow);
+            color: #001a1a;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-glow), transparent);
+            margin: 30px 0;
+        }
+
+        .btn-whatsapp {
+            background: var(--wa-deep-green);
+            color: var(--wa-light-glow);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 10px; 
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px var(--wa-light-glow); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(7, 94, 84, 0.6);
+            color: #ffffff;
+            text-shadow: 0 0 15px var(--wa-light-glow), 0 0 25px var(--wa-light-glow);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Mastery Course</h1>
+    <h2>Student Registration</h2>
+
+    <form id="registrationForm">
+        <div class="form-group">
+            <input type="text" name="unitId" placeholder="Unit ID" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="text" name="firstName" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="lastName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="hometown" placeholder="Hometown" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="age" placeholder="Age" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+        </div>
+
+        <label>Status (Optional):</label>
+        <div class="status-options">
+            <input type="radio" id="student" name="status" value="Student">
+            <label for="student">Student</label>
+            
+            <input type="radio" id="undergrad" name="status" value="Undergraduate">
+            <label for="undergrad">Undergraduate</label>
+            
+            <input type="radio" id="graduate" name="status" value="Graduate">
+            <label for="graduate">Graduate</label>
+            
+            <input type="radio" id="employee" name="status" value="Employee">
+            <label for="employee">Employee</label>
+            
+            <input type="radio" id="entrepreneur" name="status" value="Entrepreneur">
+            <label for="entrepreneur">Entrepreneur</label>
+        </div>
+
+        <button type="submit" class="btn-register">Register Now</button>
+    </form>
+
+    <hr>
+
+    <a href="https://wa.me/94712220206" class="btn-whatsapp" target="_blank">
+        Contact on WhatsApp
+    </a>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyEsF7y888KQu-1UeVB-nqt3MSP3bqFuBlF5Vcd008Ls0sh5lHXwNnc56280GiXJCJ9/exec';
+    const form = document.getElementById('registrationForm');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const btn = form.querySelector('.btn-register');
+        btn.innerText = 'Syncing...';
+        btn.disabled = true;
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert('Registration Successful! Your details have been recorded.');
+                btn.innerText = 'Register Now';
+                btn.disabled = false;
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Error connecting to database. Please try again.');
+                btn.innerText = 'Register Now';
+                btn.disabled = false;
+            });
+    });
+</script>
+
+</body>
+</html>
