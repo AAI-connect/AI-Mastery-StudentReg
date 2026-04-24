@@ -8,6 +8,7 @@
         :root {
             --bg-gradient: linear-gradient(135deg, #002b2d 0%, #001a1a 100%);
             --accent-glow: #00f2ff;
+            --path-blue: #007bff;
             --wa-deep-green: #075E54;
             --wa-light-glow: #25D366;
             --input-bg: rgba(0, 242, 255, 0.05);
@@ -60,7 +61,7 @@
             margin-bottom: 15px;
         }
 
-        input {
+        input:not([type="radio"]) {
             width: 100%;
             padding: 12px;
             background: var(--input-bg);
@@ -85,25 +86,31 @@
             color: var(--accent-glow);
         }
 
-        .status-options {
+        /* Generic style for radio button groups */
+        .radio-options {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .status-options label {
+        .radio-options input[type="radio"] {
+            display: none;
+        }
+
+        .radio-options label {
             margin: 0;
-            background: rgba(255, 255, 255, 0.05);
             padding: 8px 15px;
             border-radius: 20px;
             cursor: pointer;
-            border: 1px solid rgba(0, 242, 255, 0.2);
-            color: var(--text-color);
             transition: 0.3s;
+            font-size: 0.85rem;
         }
 
-        .status-options input[type="radio"] {
-            display: none;
+        /* Status (Cyan) Styles */
+        .status-options label {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            color: var(--text-color);
         }
 
         .status-options input[type="radio"]:checked + label {
@@ -111,6 +118,20 @@
             color: #001a1a;
             box-shadow: 0 0 15px var(--accent-glow);
             border-color: var(--accent-glow);
+        }
+
+        /* Learning Path (Blue) Styles */
+        .path-options label {
+            background: rgba(0, 123, 255, 0.1);
+            border: 1px solid rgba(0, 123, 255, 0.4);
+            color: #ffffff;
+        }
+
+        .path-options input[type="radio"]:checked + label {
+            background: var(--path-blue);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+            border-color: var(--path-blue);
         }
 
         .btn-register {
@@ -156,13 +177,6 @@
             transition: 0.3s ease;
             border: 1px solid rgba(37, 211, 102, 0.2);
         }
-
-        .btn-whatsapp:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(7, 94, 84, 0.6);
-            color: #ffffff;
-            text-shadow: 0 0 15px var(--wa-light-glow), 0 0 25px var(--wa-light-glow);
-        }
     </style>
 </head>
 <body>
@@ -179,24 +193,41 @@
         <div class="form-group">
             <input type="text" name="firstName" placeholder="First Name" required>
         </div>
+
         <div class="form-group">
             <input type="text" name="lastName" placeholder="Last Name" required>
         </div>
-        <div class="form-group">
-            <input type="text" name="hometown" placeholder="Hometown" required>
-        </div>
+
         <div class="form-group">
             <input type="number" name="age" placeholder="Age" required>
         </div>
+
+        <div class="form-group">
+            <input type="text" name="homeAddress" placeholder="Home Address" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="stateVillage" placeholder="State / Village" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="city" placeholder="City" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="zipCode" placeholder="Zip Code" required>
+        </div>
+
         <div class="form-group">
             <input type="email" name="email" placeholder="Email Address" required>
         </div>
+
         <div class="form-group">
             <input type="tel" name="phone" placeholder="Phone Number" required>
         </div>
 
         <label>Status (Optional):</label>
-        <div class="status-options">
+        <div class="radio-options status-options">
             <input type="radio" id="student" name="status" value="Student">
             <label for="student">Student</label>
             
@@ -211,6 +242,21 @@
             
             <input type="radio" id="entrepreneur" name="status" value="Entrepreneur">
             <label for="entrepreneur">Entrepreneur</label>
+        </div>
+
+        <label>Choose your AI Learning Path:</label>
+        <div class="radio-options path-options">
+            <input type="radio" id="path1" name="learningPath" value="AI Youth Path" required>
+            <label for="path1">AI Youth Path</label>
+            
+            <input type="radio" id="path2" name="learningPath" value="Artificial Intelligence Path">
+            <label for="path2">Artificial Intelligence Path</label>
+            
+            <input type="radio" id="path3" name="learningPath" value="AI Digital Marketing Path">
+            <label for="path3">AI Digital Marketing Path</label>
+            
+            <input type="radio" id="path4" name="learningPath" value="AI Content Creator Path">
+            <label for="path4">AI Content Creator Path</label>
         </div>
 
         <button type="submit" class="btn-register">Register Now</button>
